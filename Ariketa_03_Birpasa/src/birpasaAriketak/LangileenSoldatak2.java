@@ -38,12 +38,24 @@ public class LangileenSoldatak {
         System.out.println("Jubilaziorako falta zaio: " + jubilaziorakoZenbat(adina) + " urte");
     }
 
+    // 5. Estatistikak
+    public static void estatistikak(ArrayList<Double> soldatak) {
+        double totala = 0;
+        for (double s : soldatak) {
+            totala += s;
+        }
+        double batazbestekoa = soldatak.size() > 0 ? totala / soldatak.size() : 0;
+
+        System.out.println("\n--- Estatistikak ---");
+        System.out.println("Soldaten zerrenda: " + soldatak);
+        System.out.println("Soldaten guztizkoa: " + totala + " €");
+        System.out.println("Batazbesteko soldata: " + batazbestekoa + " €");
+    }
+
     // Programa nagusia
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double totala = 0;   // soldaten batura
-        int kopurua = 0;     // zenbat langile sartu diren
-
+        ArrayList<Double> soldatak = new ArrayList<>();
         boolean berriro = true;
 
         while (berriro) {
@@ -69,9 +81,7 @@ public class LangileenSoldatak {
 
             // Kalkuluak
             double soldataOsoa = soldataKalkulatu(soldataGordina, adina, semeAlabak);
-            // Totala eta kontagailua eguneratu
-            totala += soldataOsoa;
-            kopurua++;
+            soldatak.add(soldataOsoa);
 
             // Emaitzak erakutsi
             emaitzakErakutsi(izena, soldataOsoa, adina);
@@ -85,10 +95,7 @@ public class LangileenSoldatak {
         }
 
         // Estatistikak
-        double batazbestekoa = (kopurua > 0) ? totala / kopurua : 0;
-        System.out.println("\n--- Estatistikak ---");
-        System.out.println("Langile guztien soldatak guztira: " + totala + " €");
-        System.out.println("Langile guztien batazbesteko soldata: " + batazbestekoa + " €");
+        estatistikak(soldatak);
 
         sc.close();
 

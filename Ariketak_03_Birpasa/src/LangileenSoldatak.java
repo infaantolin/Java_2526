@@ -1,11 +1,9 @@
-package birpasaAriketak;
-
 import java.util.Scanner;
 
 public class LangileenSoldatak {
 
     // 1. soldataKalkulatu
-    public static double soldataKalkulatu(int soldataGordina, int adina, int semeAlabak) {
+    public static double soldataKalkulatu(double soldataGordina, int adina, int semeAlabak) {
         double soldataOsoa = soldataGordina;
         soldataOsoa += semeAlabak * 25; //25€ seme-alaba bakoitzeko
         // 60 eta 65 urte artean daukan urte bakoitzagatik 50 euro
