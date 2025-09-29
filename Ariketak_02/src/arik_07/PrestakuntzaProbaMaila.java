@@ -10,7 +10,7 @@ public class PrestakuntzaProbaMaila {
 		System.out.print("Zenbat galdera egin dira guztira? ");
 		int guztira = sc.nextInt();
 
-		System.out.print("Zenbat erantzun zuzendu dira? ");
+		System.out.print("Zenbat erantzun zuzen izan dira? ");
 		int zuzen = sc.nextInt();
 
 		double portzentaia = (zuzen * 100.0) / guztira;

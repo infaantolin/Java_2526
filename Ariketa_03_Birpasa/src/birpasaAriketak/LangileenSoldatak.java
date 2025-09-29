@@ -1,40 +1,49 @@
-package stringFuntzioa;
+package birpasaAriketak;
 
 import java.util.Scanner;
 
-public class StringFuntzioak {
+public class LangileenSoldatak {
 
-	// 1. lerroaMarraztu
-	public static void lerroaMarraztu(char karakterea, int zenbakia) {
-		for (int i = 0; i < zenbakia; i++) {
-			System.out.print(karakterea);
+	// 1. soldataKalkulatu
+		public static double soldataKalkulatu(int soldataGordina, int adina, int semeAlabak) {
+			double soldataOsoa = soldataGordina;
+			soldataOsoa += semeAlabak * 25; //25€ seme-alaba bakoitzeko
+			// 60 eta 65 urte artean daukan urte bakoitzagatik 50 euro
+			if (adina >= 60 && adina <= 65) {
+				soldataOsoa += (adina-59) * 50;
+			}
+			return soldataOsoa;
 		}
-		System.out.println();
-	}
 
-	// 2. xeheaBihurtu
-	public static String xeheaBihurtu(String testua) {
-		return testua.toLowerCase();
-	}
+		// 2. jubilaziorakoZenbat
+		public static int jubilaziorakoZenbat(int adina) {
+			// 65 urte dituztenean jubilatuko dira
+			return 65-adina;
+		}
 
-	// 3. larriaBihurtu
-	public static String larriaBihurtu(String testua) {
-		return testua.toUpperCase();
-	}
+		// 3. soldataMaila
+		public static String soldataMaila(double soldataOsoa) {
+			if (soldataOsoa < 1000) return "Soldata baxua.";
+			else if (soldataOsoa <= 2000) return "Soldata ertaina.";
+			else if (soldataOsoa <= 3000) return "Soldata altua.";
+			else return "Soldata osoa altua.";
+		}
 
-	// 4. menu
-	public static void menu() {
-		System.out.println("************** MENU **************");
-		System.out.println("1. Lerro bat margotu");
-		System.out.println("2. Letra minuskulara bihurtu (karaktere bakarra)");
-		System.out.println("3. Letra maiuskulara bihurtu (karaktere bakarra)");
-		System.out.println("4. Esaldia minuskulara bihurtu");
-		System.out.println("5. Esaldia maiuskulara bihurtu");
-		System.out.println("6. Irten");
-		System.out.print("Aukeratu (1-6): ");
-	}
+		// 4. menua
+		public static void menu() {
+			System.out.println("************** MENUA **************");
+			System.out.println("1. Soldatak kalkulatu");
+			System.out.println("2. Jubilaziorako zenbat");
+			System.out.println("3. Soldata maila");
+			System.out.println("4. Esaldia minuskulara bihurtu");
+			System.out.println("5. Esaldia maiuskulara bihurtu");
+			System.out.println("6. Irten");
+			System.out.print("Aukeratu (1-6): ");
+		}
 
-	// Programa nagusia
+		
+		
+		// Programa nagusia
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int aukera;
@@ -89,5 +98,7 @@ public class StringFuntzioak {
 		} while (aukera != 6);
 
 		sc.close();
+
 	}
+
 }

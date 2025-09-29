@@ -18,8 +18,8 @@ public class KalkulagailuSinplea {
 
         System.out.println("1. Gehitzea");
         System.out.println("2. Kenketa");
-        System.out.println("3. Produktua");
-        System.out.println("4. Dibisioa");
+        System.out.println("3. Biderketa");
+        System.out.println("4. Zatiketa");
         System.out.println("5. Atera");
 
         System.out.print("Sartu nahi duzun aukera: ");
