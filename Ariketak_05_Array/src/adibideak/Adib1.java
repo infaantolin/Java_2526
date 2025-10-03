@@ -34,7 +34,7 @@ public class Adib1 {
 		double batezbestekoa = (double) batura / zenbakiak.length;
 
 		// 3. Emaitzak
-		System.out.println("Zenbakien batura: " + batura);
+		System.out.println("\nZenbakien batura: " + batura);
 		System.out.println("Zenbakien batezbestekoa: " + batezbestekoa);
 		System.out.println("Zenbaki handiena: " + handiena);
 		System.out.println("Zenbaki txikiena: " + txikiena);
