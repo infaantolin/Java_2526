@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Arik_4_b2 {
 
 	// 1. Metodoa: ikasleen izenak kargatu
-	public static String[] arrayIzenakKargatu() {
-		Scanner sc = new Scanner(System.in);
+	public static String[] arrayIzenakKargatu(Scanner sc) {
+		
 		String[] izenak = new String[10];
 
 		for (int i = 0; i < izenak.length; i++) {
@@ -14,14 +14,12 @@ public class Arik_4_b2 {
 			izenak[i] = sc.nextLine();
 		}
 
-		sc.close();
-
 		return izenak;
 	}
 
 	// 2. Metodoa: notak kargatu (0-10 artean balidatuta)
-	public static double[] arrayNotakKargatu() {
-		Scanner sc = new Scanner(System.in);
+	public static double[] arrayNotakKargatu(Scanner sc) {
+		
 		double[] notak = new double[10];
 
 		for (int i = 0; i < notak.length; i++) {
@@ -33,8 +31,6 @@ public class Arik_4_b2 {
 
 			notak[i] = nota;
 		}
-		
-		sc.close();
 
 		return notak;
 	}
@@ -91,13 +87,15 @@ public class Arik_4_b2 {
 
 	// Programa nagusia
 	public static void main(String[] args) {
-		String[] izenak = arrayIzenakKargatu();
-		double[] notak = arrayNotakKargatu();
+		Scanner sc = new Scanner(System.in);
+		String[] izenak = arrayIzenakKargatu(sc);
+		double[] notak = arrayNotakKargatu(sc);
 
 		datuGuztiakAurkeztu(izenak, notak);
 
 		Object[] estat = datuakKalkulatu(notak);
 
 		estatistikakAurkeztu(izenak, estat);
+		sc.close();
 	}
 }
