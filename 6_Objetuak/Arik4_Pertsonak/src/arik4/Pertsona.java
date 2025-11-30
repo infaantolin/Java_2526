@@ -97,9 +97,10 @@ public class Pertsona {
 
 		if (imc < 20)
 			return AZPI_PISU;
-		if (imc <= 25)
+		else if (imc > 25)
+			return GOI_PISU;
+		else
 			return NORMAL_PISU;
-		return GOI_PISU;
 	}
 
 	/** Adin nagusikoa den ala ez itzultzen du (Boolean) */
@@ -111,7 +112,8 @@ public class Pertsona {
 	private char sexuaEgiaztatu(char sexua) {
 		if (sexua != 'G' && sexua != 'E') {
 			return 'G';
-		}else return sexua;
+		} else
+			return sexua;
 	}
 
 	/** 8 zifrako ausazko zenbaki bat sortzen du */
@@ -135,8 +137,8 @@ public class Pertsona {
 	/** objektuari buruzko informazio guztia itzultzen du. */
 	@Override
 	public String toString() {
-		return "Izena: " + izena + ", Adina: " + adina + ", NAN: " + nan + ", Sexua: " + sexua + ", Pisua: " + pisua
-				+ ", Altuera: " + altuera;
+		return ". pertsonaren datuak: [Izena: " + this.izena + ", adina: " + this.adina + ", NAN: " + this.nan
+				+ ", sexua: " + this.sexua + ", pisua: " + this.pisua + ", altuera: " + this.altuera + "]";
 	}
 
 }

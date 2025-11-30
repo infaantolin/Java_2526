@@ -1,7 +1,6 @@
 package arik4;
 
 import java.util.Scanner;
-import java.text.DecimalFormat;
 
 public class PertsonaApp {
 
@@ -46,9 +45,8 @@ public class PertsonaApp {
 		while (!balioZuzena) {
 			try {
 				System.out.print("Sartu pisua (kilogramotan): ");
-				// String input = sc.nextLine().replace(",", "."); // koma puntura bihurtu
-				DecimalFormat df = new DecimalFormat("#.##");
-				pisua = Double.parseDouble(df.format(sc.nextLine()));
+				String pisuLagun = sc.nextLine().replace(",", "."); // koma puntura bihurtu
+				pisua = Double.parseDouble(pisuLagun);
 
 				if (pisua <= 0) {
 					System.out.println("Errorea: Pisua 0 baino handiagoa izan behar da.");
@@ -91,17 +89,17 @@ public class PertsonaApp {
 
 		System.out.println("\n======= Pertsona bakoitzaren datuak =======\n");
 
-		datuakErakutsi("1. pertsona", p1);
-		datuakErakutsi("2. pertsona", p2);
-		datuakErakutsi("3. pertsona", p3);
+		datuakErakutsi(1, p1);
+		datuakErakutsi(2, p2);
+		datuakErakutsi(3, p3);
 
 		sc.close();
 	}
 
 	/** Pertsona baten datu guztiak erakutsiko dira */
-	public static void datuakErakutsi(String perZenb, Pertsona per) {
+	public static void datuakErakutsi(int perZenb, Pertsona per) {
 
-		System.out.println("=== " + perZenb);
+		System.out.println("=== " + perZenb + per.toString());
 
 		switch (per.kalkulatuIMC()) {
 		case -1 -> System.out.println("Bere pisuaren azpitik dago.");
@@ -114,7 +112,6 @@ public class PertsonaApp {
 		else
 			System.out.println("Adin txikikoa da.");
 
-		System.out.println("Informazioa: " + per.toString());
 		System.out.println();
 
 	}
