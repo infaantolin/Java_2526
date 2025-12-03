@@ -37,7 +37,7 @@ public class Arik6 {
 					System.out.print(i + ". salmenta sartu: ");
 					double salmenta = Double.parseDouble(sc.nextLine());
 
-					batura += salmenta;
+					batura += salmenta;// batura = batura + salmenta
 					salmentaOk = true;
 				} catch (NumberFormatException e) {
 					System.out.println("Errorea: zenbaki baliozkoa sartu behar da!");
