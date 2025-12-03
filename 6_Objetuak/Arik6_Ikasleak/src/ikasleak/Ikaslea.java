@@ -1,18 +1,20 @@
 package ikasleak;
 
 public class Ikaslea {
+	
+	private final char SEXUA_E ='E';
+	
 	private String izena;
 	private char sexua;
 	private int adina;
-	private float altuera;
-	private float pisua;
+	private double altuera;
+	private double pisua;
 	
 	
 	
-	
-	public Ikaslea(String izena, char sexua, int adina, float altuera, float pisua) {
+	public Ikaslea(String izena, char sexua, int adina, double altuera, double pisua) {
 		this.izena = izena;
-		this.sexua = sexua;
+		this.sexua = sexuaEgiaztatu(sexua);
 		this.adina = adina;
 		this.altuera = altuera;
 		this.pisua = pisua;
@@ -20,7 +22,7 @@ public class Ikaslea {
 	
 	
 	public String getIzena() {
-		return izena;
+		return this.izena;
 	}
 	public void setIzena(String izena) {
 		this.izena = izena;
@@ -32,24 +34,32 @@ public class Ikaslea {
 		this.sexua = sexua;
 	}
 	public int getAdina() {
-		return adina;
+		return this.adina;
 	}
 	public void setAdina(int adina) {
 		this.adina = adina;
 	}
-	public float getAltuera() {
-		return altuera;
+	public double getAltuera() {
+		return this.altuera;
 	}
-	public void setAltuera(float altuera) {
+	public void setAltuera(double altuera) {
 		this.altuera = altuera;
 	}
-	public float getPisua() {
-		return pisua;
+	public double getPisua() {
+		return this.pisua;
 	}
-	public void setPisua(float pisua) {
+	public void setPisua(double pisua) {
 		this.pisua = pisua;
 	}
 
+	/** Sartutako sexua zuzena dela egiaztatu. Zuzena ez bada, G izango da. */
+	private char sexuaEgiaztatu(char sexua) {
+		if (sexua != 'G' && sexua != 'E') {
+			return SEXUA_E;
+		} else
+			return sexua;
+	}
+	
 	public String getDatuak() {
 		return izena + " " + sexua + " " + adina + " " + altuera + " " + pisua;
 	}

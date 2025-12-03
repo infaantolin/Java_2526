@@ -7,6 +7,7 @@ public class Pertsona {
 	private final int NORMAL_PISU = 0;
 	private final int GOI_PISU = 1;
 
+	
 	// Atributuak
 	private String izena;
 	private int adina;
@@ -18,7 +19,7 @@ public class Pertsona {
 	// Eraikitzaileak
 	public Pertsona() {
 		this.nan = "00000000A";
-		this.sexua = SEXUA;
+		this.sexua = SEXUA; //E
 	}
 
 	public Pertsona(String izena, int adina, char sexua) {
@@ -105,7 +106,7 @@ public class Pertsona {
 
 	/** Adin nagusikoa den ala ez itzultzen du (Boolean) */
 	public boolean adinezNagusikoaDa() {
-		return adina >= 18;
+		return this.adina >= 18;
 	}
 
 	/** Sartutako sexua zuzena dela egiaztatu. Zuzena ez bada, G izango da. */
