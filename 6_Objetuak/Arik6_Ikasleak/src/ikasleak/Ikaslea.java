@@ -4,6 +4,7 @@ public class Ikaslea {
 	
 	private final char SEXUA_E ='E';
 	
+	// Atributuak
 	private String izena;
 	private char sexua;
 	private int adina;
@@ -11,7 +12,7 @@ public class Ikaslea {
 	private double pisua;
 	
 	
-	
+	// Eraikitzailea
 	public Ikaslea(String izena, char sexua, int adina, double altuera, double pisua) {
 		this.izena = izena;
 		this.sexua = sexuaEgiaztatu(sexua);
@@ -21,6 +22,7 @@ public class Ikaslea {
 	}
 	
 	
+	// GETTER & SETTER
 	public String getIzena() {
 		return this.izena;
 	}
@@ -52,6 +54,8 @@ public class Ikaslea {
 		this.pisua = pisua;
 	}
 
+	
+	// Gure metodoak
 	/** Sartutako sexua zuzena dela egiaztatu. Zuzena ez bada, G izango da. */
 	private char sexuaEgiaztatu(char sexua) {
 		if (sexua != 'G' && sexua != 'E') {
